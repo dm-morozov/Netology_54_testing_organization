@@ -1,0 +1,181 @@
+/* Общие стили для страницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Используем современный шрифт */
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Градиентный фон */
+    color: #333; /* Цвет текста */
+    line-height: 1.6;
+}
+
+/* Стили для заголовков */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Элегантный шрифт для заголовков */
+    color: #444;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Стили для ссылок */
+a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d64550;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d64550;
+}
+
+/* Стили для контейнера */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для карточек */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Подключение шрифтов Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+.game-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.row {
+    display: flex;
+    gap: 2px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+}
+
+.goblin {
+    /* background: url('../img/goblin.png') no-repeat center center; */
+    background-size: cover;
+}
+  
+
+table.movie-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+  
+.movie-table th,
+.movie-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.movie-table th {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+/* Стили для задачи: TOP Tasks* (задача со звёздочкой) */
+
+.top-tasks {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* светлый фон */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+    font-family: Arial, sans-serif;
+}
+
+#description__top-tasks {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.top-tasks h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.pinned-tasks__top-tasks,
+.all-tasks__top-tasks {
+    margin-top: 10px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: background 0.2s ease;
+}
+
+.task:hover {
+    background-color: #f0f0f0;
+}
+
+.task button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 10px;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.task button:hover {
+    color: #333;
+}
+
+
+  
