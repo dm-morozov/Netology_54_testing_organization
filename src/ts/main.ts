@@ -1,28 +1,39 @@
 // main.ts
-import Game from "./Game";
-import MovieList from "./MovieList";
-import { Movie } from "./interface";
-import movieDataJSON from "./movieData.json";
-import Tasks from "./TOPTasks";
 
-const movieData: Array<Movie> = movieDataJSON;
+import isValidCardNumber from "./validator";
+import { detectCardSystem } from "./cardDetector";
+import activeCard from "./ui";
 
-declare global {
-  interface Window {
-    game: Game;
-    movieList: MovieList;
+document.querySelector("#submitform")?.addEventListener("click", () => {
+  const input = document.querySelector(
+    "#credit-card-number",
+  ) as HTMLInputElement;
+  const value = input.value.trim();
+
+  // Удаляем предыдущие сообщения об ошибках
+  const existingError = document.querySelector(".error-message");
+  if (existingError) {
+    existingError.remove();
   }
-}
 
-const game = new Game(4);
-game.start();
-window.game = game;
+  const valid = isValidCardNumber(value);
+  const cardSystem = detectCardSystem(value);
 
-const movieList = new MovieList(movieData);
-movieList.renderTable();
-window.movieList = movieList;
+  if (valid) {
+    activeCard(cardSystem);
+    input.style.borderColor = "green";
+  } else {
+    input.style.borderColor = "red";
+    const activeClass = document.querySelector(
+      ".card.active",
+    ) as HTMLSpanElement;
+    if (activeClass) activeClass.classList.remove("active");
+    const errorDiv = document.createElement("div");
+    errorDiv.classList.add("error-message");
+    errorDiv.textContent = "Введен неверный номер карты, валидацию не прошел.";
+    input.insertAdjacentElement("afterend", errorDiv);
+  }
 
-// TOP Tasks* (задача со звёздочкой)
-
-const tasks = new Tasks();
-tasks.render();
+  console.log(valid);
+  console.log(cardSystem);
+});
