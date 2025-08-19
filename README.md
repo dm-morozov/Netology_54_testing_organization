@@ -87,7 +87,7 @@ npm run dev
 ## ✅ Тесты
 
 ```bash
-yarn run test       # Unit-тесты через Jest
+yarn run test       # Unit-тесты через Jest (В данном приложении их нет)
 yarn run e2e        # End-to-End через Puppeteer
 ```
 
